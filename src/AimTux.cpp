@@ -53,8 +53,8 @@ int __attribute__((constructor)) AimTuxInit()
 	modelRenderVMT->ApplyVMT();
 
 	clientModeVMT->HookVM((void*) Hooks::OverrideView, 19);
-	clientModeVMT->HookVM((void *) Hooks::WriteUserCmdDeltaToBuffer, 23); // for drPepper exploit
 	clientModeVMT->HookVM((void*) Hooks::CreateMove, 25);
+	clientModeVMT->HookVM((void*) Hooks::WriteUserCmdDeltaToBuffer, 23); // for drPepper exploit
 	clientModeVMT->HookVM((void*) Hooks::GetViewModelFOV, 36);
 	clientModeVMT->ApplyVMT();
 
