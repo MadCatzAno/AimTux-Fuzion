@@ -40,7 +40,7 @@ void Resolver::FrameStageNotify(ClientFrameStage_t stage)
 			static bool bFlip = true;
 			float flYaw = *player->GetLowerBodyYawTarget();
 
-			if (player->isMoving()) {
+			if (player->GetVelocity.x > 0.0f || player->GetVelocity.y > 0.0f || player->GetVelocity.z > 0.0f ) {
 				float flCurTime = globalVars->curtime;
 				static float flTimeUpdate = 0.5f;
 				static float flNextTimeUpdate = flCurTime + flTimeUpdate;
